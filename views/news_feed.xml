@@ -1,0 +1,54 @@
+<odoo>
+
+    <record model="ir.ui.view" id="news_list">
+      <field name="name">mi news list</field>
+      <field name="model">mi.newsfeed</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="product_img" widget="image"/>
+            <field name="product_launch"/>
+            <field name="launching_date"/>
+            <field name="abouts"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="news_form" model="ir.ui.view">
+      <field name="name">mi news form</field>
+      <field name="model">mi.newsfeed</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <div>
+                   <field name="product_img" class="oe_avatar" widget="image"/>
+                </div>
+                <group>
+                    <field name="product_launch"/>
+                    <field name="categ_id"/> 
+                    <field name="launching_date"/>
+                    <field name="abouts"/>    
+               </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+    
+    <record id="view_news_calendar" model="ir.ui.view">
+        <field name="name">Mi News calendar</field>
+        <field name="model">mi.newsfeed</field>
+        <field name="arch" type="xml">
+            <calendar string="Products Launching" date_start="launching_date" mode="month" color="categ_id" 
+            event_open_popup="true">
+               <field name="product_launch"/>
+            </calendar> 
+        </field>       
+    </record>
+
+    <record model="ir.actions.act_window" id="news_action_window">
+      <field name="name">Mi News</field>
+      <field name="res_model">mi.newsfeed</field>
+      <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+    <menuitem name="News" id="news_menu" parent="mi_app" action="news_action_window"/>
+</odoo>

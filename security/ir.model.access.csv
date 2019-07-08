@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mi_product,mi.product,model_mi_product,,1,1,1,1
+access_mi_sale,mi.sale,model_mi_sale,,1,1,1,1
+access_mi_service,mi.service,model_mi_service,,1,1,1,1
+access_mi_sale_customer,mi.sale.customer,model_mi_sale_customer,,1,1,1,1
+access_mi_product_category,mi.product.category,model_mi_product_category,,1,1,1,1
+access_mi_sale_order,mi.sale.order,model_mi_sale_order,,1,1,1,1
+access_mi_sale_delivery,mi.sale.delivery,model_mi_sale_delivery,,1,1,1,1
+access_mi_newsfeed,mi.newsfeed,model_mi_newsfeed,,1,1,1,1

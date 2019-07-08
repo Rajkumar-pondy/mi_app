@@ -1,0 +1,248 @@
+<odoo>
+
+    <record model="ir.ui.view" id="sale_list">
+      <field name="name">mi sale list</field>
+      <field name="model">mi.sale</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="sale_code"/>
+          <field name="sale_customer_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="sale_form" model="ir.ui.view">
+      <field name="name">mi sale form</field>
+      <field name="model">mi.sale</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <div>
+                    <h1><field name="sale_code" readonly="1"/></h1>
+                </div>
+                <group>
+                    <field name="sale_customer_id"/>
+                </group>
+                <notebook>
+                    <page string="Order_Lines">
+                        <field name="sale_order_ids"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+      </field>
+    </record>
+    
+     <record id="order_list" model="ir.ui.view">
+      <field name="name">mi sale order list</field>
+      <field name="model">mi.sale.order</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="order_code"/>
+            <field name="customer_id"/>
+            <field name="order_product_id"/>
+            <field name="order_date"/>
+            <field name="delivery_date"/>
+            <field name="order_quantity"/>
+            <field name="total_price"/>
+            <field name="payment_type"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record id="order_form" model="ir.ui.view">
+      <field name="name">mi sale order form</field>
+      <field name="model">mi.sale.order</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <div>
+                    <h1><field name="order_code" readonly="1"/></h1>
+                </div>
+                <group>
+                    <group>
+                        <field name="customer_id" context="{'customer_special_name':True}"/>
+                        <field name="order_product_id"/>
+                        <field name="product_code"/>
+                        <field name="warranty_period"/>
+                        <field name="order_date"/>
+                    </group>
+                    <group>
+                        <field name="delivery_date"/>
+                        <field name="order_quantity"/>
+                        <field name="total_price"/>
+                        <field name="payment_type"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="customer_list" model="ir.ui.view">
+      <field name="name">mi sale customer list</field>
+      <field name="model">mi.sale.customer</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="customer_code"/>
+            <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="customer_form" model="ir.ui.view">
+      <field name="name">mi sale customer form</field>
+      <field name="model">mi.sale.customer</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                 <div class="oe_button_box" name="button_box">
+                        <button name="compute_cart_items"
+                            class="oe_stat_button" type="object"
+                            attrs="{'invisible': [('cart_count','=',0)]}"
+                            icon="fa-shopping-cart">
+                            <field name="cart_count" widget="statinfo" string="Cart" />
+                        </button>
+                        <button name="compute_service_count"
+                            class="oe_stat_button" type="object"
+                            attrs="{'invisible': [('service_count','=',0)]}"
+                            icon="fa-list">
+                            <field name="service_count" widget="statinfo" string="Services" />
+                        </button>
+                </div>
+                <div>
+                    <h1>
+                        <field name="customer_code" readonly="1"/>
+                    </h1>
+                </div>
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <label for="street" string="Address"/>
+                        <div>
+                        <field name="street" placeholder="street"/>
+                        <field name="street2"/>
+                           <div>
+                           <field name="city" class="oe_inline" placeholder="City"/>
+                           <field name="zip" class="oe_inline" placeholder="ZIP"/>
+                            </div>
+                        <field name="country" placeholder="country"/>
+                        <field name="mobile_no" placeholder="mobile_no"/>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="product_cart_ids" widget="many2many_tags" string="Products" options="{'color_field':'color'}"/>
+                    </group>
+                </group>
+                    <notebook>
+                        <page string="Orders">
+                            <field name="order_ids"/>
+                        </page>
+                        <page string="Services">
+                            <field name="service_ids"/>
+                        </page>
+                    </notebook>
+            </sheet>
+        </form>
+      </field>
+    </record>
+    
+    <record id="delivery_list" model="ir.ui.view">
+      <field name="name">mi sale delivery list</field>
+      <field name="model">mi.sale.delivery</field>
+      <field name="arch" type="xml">
+        <tree decoration-success="state=='delivered'" decoration-primary="state=='shipped'" decoration-danger="state=='out_delivery'">
+            <field name="delivery_customer_id"/>
+            <field name="delivery_order_id" context="{'order_special_name':True}"/>
+            <field name="delivery_datetime"/>
+            <field name="state" string="Delivery Status"/>
+            <field name="payment_type"/>
+            <field name="total_amount"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record id="delivery_form" model="ir.ui.view">
+      <field name="name">mi sale delivery form</field>
+      <field name="model">mi.sale.delivery</field>
+      <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="ship_progressbar" string="Item Shipped" type="object" attrs="{'invisible':[('state','=','shipped')]}"/>
+                <button name="pack_progress" string="Item Packed" type="object" attrs="{'invisible':[('state','=','packed')]}"/>
+                <button name="out_progress" string="Out for delivery" type="object" attrs="{'invisible':[('state','=','out_delivery')]}"/>
+                <button name="delivery_progress" string="Item Delivered" type="object" attrs="{'invisible':[('state','=','delivered')]}"/>
+                <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+                <group>
+                    <field name="delivery_customer_id"/>
+                    <field name="delivery_order_id"/>
+                    <field name="delivery_datetime"/>
+                    <field name="payment_type"/>
+                    <field name="total_amount"/>
+                </group>
+            </sheet>
+           <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                        widget="mail_followers" />
+                    <field name="message_ids" widget="mail_thread" />
+            </div>
+         </form>
+      </field>
+    </record>
+    
+    <record id="customer_sequence" model="ir.sequence">
+      <field name="name">Customer Sequence</field>
+      <field name="code">mi.sale.customer</field>
+      <field name="prefix">CU</field>
+      <field name="padding">4</field>
+    </record>
+    
+    <record id="sale_sequence" model="ir.sequence">
+      <field name="name">Sale Sequence</field>
+      <field name="code">mi.sale</field>
+      <field name="prefix">SO</field>
+      <field name="padding">4</field>
+    </record>
+    
+    <record id="order_sequence" model="ir.sequence">
+      <field name="name">Order Sequence</field>
+      <field name="code">mi.sale.order</field>
+      <field name="prefix">OR</field>
+      <field name="padding">4</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="sale_action_window">
+      <field name="name">Mi Sale</field>
+      <field name="res_model">mi.sale</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+     <record id="order_action_window" model="ir.actions.act_window">
+      <field name="name">Mi sale order</field>
+      <field name="res_model">mi.sale.order</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="customer_action_window" model="ir.actions.act_window">
+      <field name="name">Mi sale customer</field>
+      <field name="res_model">mi.sale.customer</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="delivery_action_window" model="ir.actions.act_window">
+      <field name="name">Mi sale delivery</field>
+      <field name="res_model">mi.sale.delivery</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem name="Sale" id="sale_menu" parent="mi_app"/>
+    <menuitem name="Sales" id="sale_submenu" parent="sale_menu" action="sale_action_window" sequence="1"/>
+    <menuitem name="Order" id="order_submenu" parent="sale_menu" action="order_action_window" sequence="3"/>
+    <menuitem name="Customer" id="customer_submenu" parent="sale_menu" action="customer_action_window" sequence="2"/>
+    <menuitem name="Delivery" id="delivery_submenu" parent="sale_menu" action="delivery_action_window" sequence="4"/>
+
+</odoo>

@@ -1,0 +1,204 @@
+<odoo>
+
+    <record model="ir.ui.view" id="product_list">
+      <field name="name">Product list</field>
+      <field name="model">mi.product</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="product_code"/>
+            <field name="name"/>
+            <field name="currencies"/>
+            <field name="price"/>
+            <field name="is_product_available"/>
+            <field name="product_availability"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="product_form">
+      <field name="name">Product form</field>
+      <field name="model">mi.product</field>
+      <field name="arch" type="xml">
+        <form>
+            <sheet>
+                 <div>
+                    <h1>
+                        <field name="product_code" readonly="1"/>
+                    </h1>
+                </div>
+                <group>
+                <div id="product_container">
+                    <field name="image" widget="image" class="oe_avatar"/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                                <h1>
+                                    <field name="name" placeholder="Product Name"/>
+                                </h1>
+                               </div>
+                </div>
+                </group>
+                    <notebook>
+                        <page string="General Information">
+                            <group>
+                                <group>
+                                    <field name="category_id"/>
+                                    <field name="manufacture_date"/>
+                                    <field name="currencies"/>
+                                 </group>
+                                <group>
+                                    <field name="price"/>
+                                    <field name="product_availability"/>
+                                    <field name="is_product_available"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Product Description">
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </page>
+                    </notebook>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="product_category_tree" model="ir.ui.view">
+      <field name="name">Product category list</field>
+      <field name="model">mi.product.category</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="category_name"/>
+            <field name="category_code"/>
+            <field name="product_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="product_category_form" model="ir.ui.view">
+      <field name="name">Product category form</field>
+      <field name="model">mi.product.category</field>
+      <field name="arch" type="xml">
+        <form>
+            <header>
+                <button class="oe_highlight" name="%(product_action_window)d" type="action" string="Back to Products" confirm="Are you sure to go back to products?"/>
+            </header>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="category_name"/>
+                        <field name="category_code"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Products">
+                        <field name="product_ids"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+      </field>
+    </record>
+    
+    <record id="view_product_search" model="ir.ui.view">
+      <field name="name">Product Search</field>
+      <field name="model">mi.product</field>
+      <field name="arch" type="xml">
+        <search string="Products related Search">
+            <filter name="Budget Price(Below 10000)" domain="[('price','&lt;=',10000)]"/>
+            <filter name="High Price(Above 10000)" domain="[('price','&gt;',10000)]"/>
+            <separator/>
+            <field name="name" filter_domain="[('name','ilike', self)]"/>
+            <field name="category_id"/>
+            <separator/>
+            <group expand="0" string="Product Availability">
+                <filter name="Products Available" domain="[('product_availability','=', 'in_stock')]" context="{'group_by':'category_id'}"/>
+                <filter name="Products Not Available" domain="[('product_availability','=', 'out_stock')]" context="{'group_by':'category_id'}"/>
+                <separator/>
+            </group>
+        </search>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="mi_product_kanban">
+        <field name="name">mi product kanban</field>
+        <field name="model">mi.product</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" group_create="false">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="product_code"/>
+                <field name="currencies"/>
+                <field name="price"/>
+                <field name="image"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_record_top">
+                                <div class="o_kanban_record_headings">
+                                    <strong class="o_kanban_record_title">
+                                    <span><field name="product_code"/></span>
+                                    </strong>
+                                </div>
+                                <strong><field name="name"/></strong>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('mi.product','image',record.id.raw_value)" alt="Mi"/>
+                                </div>
+                                <div class="o_kanban_details">
+                                     <field name="price" widget="Monetary"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+     <record id="view_pivot_products" model="ir.ui.view">
+      <field name="name">Product Pivot</field>
+      <field name="model">mi.product</field>
+      <field name="arch" type="xml">
+        <pivot string="Price Analysis">
+            <field name="category_id" type="row"/>
+            <field name="price" type="measure" widget="monetary"/>
+        </pivot>
+      </field>
+      </record>
+    
+
+    <record id="product_sequence" model="ir.sequence">
+      <field name="name">Product Sequence</field>
+      <field name="code">mi.product</field>
+      <field name="prefix">PO</field>
+      <field name="padding">4</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="product_action_window">
+      <field name="name">Mi Product</field>
+      <field name="res_model">mi.product</field>
+      <field name="view_mode">tree,form,search,kanban,pivot</field>
+      <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the products</p>
+      </field>
+    </record>
+
+    <record id="category_action_window" model="ir.actions.act_window">
+      <field name="name">Product Category</field>
+      <field name="res_model">mi.product.category</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the product category</p>
+      </field>
+    </record>
+
+    <menuitem name="Mi App" id="mi_app"/>
+
+    <menuitem name="Product" id="product_menu" parent="mi_app"/>
+    
+    <menuitem name="Products" id="product_submenu" parent="product_menu" action="product_action_window"/>
+    <menuitem name="Category" id="category_submenu" parent="product_menu" action="category_action_window"/>
+
+</odoo>
