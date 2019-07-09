@@ -168,6 +168,16 @@
       </field>
       </record>
     
+    <record id="view_product_category_price_graph" model="ir.ui.view">
+         <field name="name">mi product price graph</field>
+         <field name="model">mi.product</field>
+         <field name="arch" type="xml">
+             <graph string="Price Analysis">
+                 <field name="category_id"/>
+                 <field name="price" type="measure"/>
+             </graph>
+         </field>
+    </record>
 
     <record id="product_sequence" model="ir.sequence">
       <field name="name">Product Sequence</field>
@@ -179,7 +189,7 @@
     <record model="ir.actions.act_window" id="product_action_window">
       <field name="name">Mi Product</field>
       <field name="res_model">mi.product</field>
-      <field name="view_mode">tree,form,search,kanban,pivot</field>
+      <field name="view_mode">tree,form,search,kanban,pivot,graph</field>
       <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">Create the products</p>
       </field>
