@@ -43,11 +43,21 @@
             </calendar> 
         </field>       
     </record>
+    
+    <record id="view_news_graph" model="ir.ui.view">
+            <field name="name">mi product launch graph</field>
+            <field name="model">mi.newsfeed</field>
+            <field name="arch" type="xml">
+                <graph string="Product Launching">
+                    <field name="launching_date"/>
+                </graph>
+            </field>
+        </record>
 
     <record model="ir.actions.act_window" id="news_action_window">
       <field name="name">Mi News</field>
       <field name="res_model">mi.newsfeed</field>
-      <field name="view_mode">tree,form,calendar</field>
+      <field name="view_mode">tree,form,calendar,graph</field>
     </record>
 
     <menuitem name="News" id="news_menu" parent="mi_app" action="news_action_window"/>
