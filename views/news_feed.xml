@@ -8,7 +8,7 @@
             <field name="product_img" widget="image"/>
             <field name="product_launch"/>
             <field name="launching_date"/>
-            <field name="abouts"/>
+            <field name="about"/>
         </tree>
       </field>
     </record>
@@ -26,7 +26,7 @@
                     <field name="product_launch"/>
                     <field name="categ_id"/> 
                     <field name="launching_date"/>
-                    <field name="abouts"/>    
+                    <field name="about"/>    
                </group>
             </sheet>
         </form>
