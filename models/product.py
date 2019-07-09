@@ -17,7 +17,7 @@ class MiProduct(models.Model):
     price = fields.Monetary('Price',currency_field='currencies',digits=(7,1),group_operator='avg')
     description=fields.Html('Description')
     product_availability = fields.Selection([('in_stock', 'In Stock'), ('out_stock', 'Out of Stock'), ('soon_available', 'Available Soon')],string="Product Availability")
-    is_product_available = fields.Boolean(default=False,compute="compute_product_available")
+    is_product_available = fields.Boolean(default=False)
     color=fields.Integer()
     
     #Relational Fields
@@ -34,8 +34,8 @@ class MiProduct(models.Model):
         if len(self.name)<5:
             raise ValidationError("The product name should not be less than 5 characters")
     
-    @api.depends('product_availability')
-    def compute_product_available(self):
+    @api.onchange('product_availability')
+    def onchange_product_available(self):
         for record in self:
             if record.product_availability=='in_stock':
                 record.is_product_available=record.write({'is_product_available':True})
