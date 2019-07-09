@@ -48,7 +48,7 @@
             <field name="name">mi product launch graph</field>
             <field name="model">mi.newsfeed</field>
             <field name="arch" type="xml">
-                <graph string="Product Launching">
+                <graph string="Product Launching" type="measure">
                     <field name="categ_id"/>
                 </graph>
             </field>
