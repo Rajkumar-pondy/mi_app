@@ -9,6 +9,6 @@ class MiNews(models.Model):
     product_launch=fields.Char()
     product_img=fields.Binary()
     launching_date=fields.Date()
-    abouts=fields.Text()
+    about=fields.Text()
     categ_id=fields.Many2one('mi.product.category',string='Product Categories')
     
