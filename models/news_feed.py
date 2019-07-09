@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class MiNews(models.Model):
     _name = 'mi.newsfeed'
     _description="Mi News Feed"
+    _rec_name="product_launch"
     
     product_launch=fields.Char()
     product_img=fields.Binary()
