@@ -36,8 +36,13 @@ class MiProduct(models.Model):
     
     @api.depends('product_availability')
     def compute_product_available(self):
-        if self.product_availability=='in_stock':
-            self.is_product_available= self.is_product_available.write({'is_product_available':True})
+        for record in self:
+            if record.product_availability=='in_stock':
+                record.is_product_available=record.write({'is_product_available':True})
+            elif record.product_availability=='out_stock':
+                record.is_product_available=record.write({'is_product_available':False})
+            else:
+                record.is_product_available=record.write({'is_product_available':False})
    
 class ProductCategory(models.Model):
     _name="mi.product.category"
