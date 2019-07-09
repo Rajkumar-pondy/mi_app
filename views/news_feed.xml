@@ -49,7 +49,7 @@
             <field name="model">mi.newsfeed</field>
             <field name="arch" type="xml">
                 <graph string="Product Launching">
-                    <field name="launching_date"/>
+                    <field name="categ_id"/>
                 </graph>
             </field>
         </record>
