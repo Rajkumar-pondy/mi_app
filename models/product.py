@@ -33,16 +33,6 @@ class MiProduct(models.Model):
     def check_name_constrains(self):
         if len(self.name)<5:
             raise ValidationError("The product name should not be less than 5 characters")
-    
-    @api.onchange('product_availability')
-    def onchange_product_available(self):
-        for record in self:
-            if record.product_availability=='in_stock':
-                record.is_product_available=record.write({'is_product_available':True})
-            elif record.product_availability=='out_stock':
-                record.is_product_available=record.write({'is_product_available':False})
-            else:
-                record.is_product_available=record.write({'is_product_available':False})
    
 class ProductCategory(models.Model):
     _name="mi.product.category"
