@@ -28,6 +28,8 @@
         'views/sale_view.xml',
         'views/service_view.xml',
         'views/sale_order.xml',
-        'views/news_feed.xml'
+        'views/news_feed.xml',
+        'views/report_order.xml',
+        'views/report_order_view.xml'
     ]
 }
