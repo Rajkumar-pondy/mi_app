@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       
+       <template id="mi_app.report_sale_order">
+        <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+           <t t-call="web.external_layout">
+               <div class="page">
+                   <h2>Report title</h2>
+                   <p>Product code:<span t-field="o.product_code"/></p>
+               </div>
+           </t>
+       </t>
+       </t>
+      </template>
+</odoo>

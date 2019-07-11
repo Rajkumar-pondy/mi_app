@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <report
+            id="report_mi_sale_order"
+            model="mi.sale.order"
+            string="Mi Sale Order"
+            report_type="qweb-pdf"
+            name="mi_app.report_sale_order"
+            file="mi_app.report_sale_order"
+            print_report_name="'Mi-Sale-Order - %s' % (object.product_code)"/>
+    </data>
+</odoo>
