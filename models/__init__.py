@@ -6,3 +6,4 @@ from . import service
 from . import class_service
 from . import sale_order
 from . import news_feed
+from . import about_us

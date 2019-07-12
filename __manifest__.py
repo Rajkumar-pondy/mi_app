@@ -23,13 +23,16 @@
 
     # always loaded
     'data': [
+        'data/report.paperformat.xml',
         'security/ir.model.access.csv',
         'views/product_view.xml',
         'views/sale_view.xml',
         'views/service_view.xml',
         'views/sale_order.xml',
         'views/news_feed.xml',
-        'views/report_order.xml',
-        'views/report_order_view.xml'
+        'report/report_order_action.xml',
+        'report/report_head_foot.xml',
+        'report/report_order_template.xml',
+        'views/about_view.xml'
     ]
 }

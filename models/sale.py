@@ -34,12 +34,12 @@ class MiCustomer(models.Model):
         context={}
         res=[]
         for record in self:
-          if context.get('customer_special_name',False):
+            if context.get('customer_special_name',False):
                 res.append((record.id,record.name))
-          else:
+            else:
                 res.append((record.id,'%s %s' %(record.name,record.city)))
         return res
-    
+        
     def compute_cart_items(self):
         action = {
                       'name': 'Mi product',
@@ -90,7 +90,6 @@ class MiSale(models.Model):
     sale_code=fields.Char(default='New')
     sale_customer_id=fields.Many2one('mi.sale.customer',string="Customer Name",required=True,ondelete='cascade')
     sale_order_ids=fields.One2many('mi.sale.order','order_sale_id')
-    
     def create(self,vals):
         if vals.get('sale_code','New')=='New':
             vals['sale_code']= self.env['ir.sequence'].next_by_code('mi.sale') or '/'
@@ -114,6 +113,7 @@ class MiOrder(models.Model):
     customer_id=fields.Many2one('mi.sale.customer')
     order_product_id=fields.Many2one('mi.product')
     order_sale_id=fields.Many2one('mi.sale')
+    company=fields.Many2one('res.company')
     
     @api.onchange('order_quantity')
     def onchange_order_quantity(self):
@@ -132,7 +132,7 @@ class MiOrder(models.Model):
             if context.get('order_special_name',False):
                 res.append((record.id,record.customer_id.name))
             elif not record.exists():
-                raise Exceptions("The record has been deleted")
+                raise exceptions("The record has been deleted")
             else:
                 res.append((record.id,'%s,%s' %(record.customer_id.name,record.order_product_id.name)))
         return res

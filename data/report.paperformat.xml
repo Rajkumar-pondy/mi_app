@@ -1,6 +1,6 @@
-<odoo>
+<odoo noupdate="1">
 
-<record id="paperformat_sale_order" model="report.paperformat">
+<record id="base.paperformat_us" model="report.paperformat">
    <field name="name">Mi Sale Order</field>
    <field name="default" eval="True"/>
    <field name="format">custom</field>

@@ -72,6 +72,7 @@
                         <field name="order_quantity"/>
                         <field name="total_price"/>
                         <field name="payment_type"/>
+                        <field name="company"/>
                     </group>
                 </group>
             </sheet>

@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-       
-       <template id="mi_app.report_sale_order">
+<odoo>    
+               
+           <template id="sale_order_report_documents"> 
+            <t t-call="web.external_layout_standard">
+               <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <div class="col-6" name="customer_address">
+                        <div t-field="o.customer_id.street"/>
+                    </div>
+                    </div>
+                    <div>
+                    <strong t-if="o.order_code">#Order code:<span t-field="o.order_code"/> </strong>
+                    </div>
+                    <div>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr>
+                            <t t-set="colspan" t-value="6"/>
+                            <th class="text-right">customer_id</th>
+                            <th class="text-right">product_code</th>
+                            <th class="text-right">order_date</th>
+                            <th class="text-right">delivery_date</th>
+                            <th class="text-right">order_quantity</th>
+                            <th class="text-right">total_price</th>
+                            </tr>
+                        </thead>
+                        <tbody class="order_tbody">
+                            <tr>
+                            <td class="text-center"><span t-field="o.customer_id"/></td>
+                            <td class="text-center"><span t-field="o.product_code"/></td>
+                            <td class="text-center"><span t-field="o.order_date"/></td>
+                            <td class="text-center"><span t-field="o.delivery_date"/></td>
+                            <td class="text-center"><span t-field="o.order_quantity"/></td>
+                            <td class="text-center"><span t-field="o.total_price"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+             </t>   
+      </template>
+         
+      <template id="mi_app.report_sale_order">
         <t t-call="web.html_container">
         <t t-foreach="docs" t-as="o">
-           <t t-call="web.external_layout">
-               <div class="page">
-                   <h2>Report title</h2>
-                   <p>Product code:<span t-field="o.product_code"/></p>
-               </div>
-           </t>
-       </t>
-       </t>
-      </template>
+          <t t-call="mi_app.sale_order_report_documents"/>
+         </t> 
+         </t>
+      </template> 
 </odoo>

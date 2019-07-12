@@ -1,0 +1,39 @@
+<odoo>
+
+    <template id="web.external_layout_standard">
+        <div class="header" style="background-image:url(//mi_app/static/src/img/redmi.jpeg);height=120px;width=100px">
+             <div class="row" style="border-bottom: 3px solid black;">
+                <div class="col-3 mb4">
+                    <img t-if="o.company.logo" t-att-src="image_data_uri(o.company.logo)" style="max-height: 45px;" alt="Logo"/>
+                </div>
+             </div>
+            <separator/>
+            <div class="row">
+                <div class="col-6" name="company_address">
+                    <strong>Company Address</strong>
+                    <div t-field="o.company.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                </div>
+            </div>
+        </div>
+          <div class="article o_report_layout_standard"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+        <div class="footer o_standard_footer">
+        <div class="text-center" style="border-top: 1px solid black;">
+            <ul class="list-inline">
+                <li t-if="o.company.phone" class="list-inline-item">Phone: <span t-field="o.company.phone"/></li>
+                <li t-if="o.company.email" class="list-inline-item">Email: <span t-field="o.company.email"/></li>
+                <li t-if="o.company.website" class="list-inline-item">Web: <span t-field="o.company.website"/></li>
+            </ul>
+
+            <ul class="list-inline">
+                <li>Page:</li>
+                <li><span class="page"/></li>
+                <li>/</li>
+                <li><span class="topage"/></li>
+            </ul>
+        </div>
+    </div>
+    </template>
+</odoo>

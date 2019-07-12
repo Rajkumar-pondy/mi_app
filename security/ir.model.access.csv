@@ -7,3 +7,4 @@ access_mi_product_category,mi.product.category,model_mi_product_category,,1,1,1,
 access_mi_sale_order,mi.sale.order,model_mi_sale_order,,1,1,1,1
 access_mi_sale_delivery,mi.sale.delivery,model_mi_sale_delivery,,1,1,1,1
 access_mi_newsfeed,mi.newsfeed,model_mi_newsfeed,,1,1,1,1
+access_mi_aboutus,mi.aboutus,model_mi_aboutus,,1,1,1,1
