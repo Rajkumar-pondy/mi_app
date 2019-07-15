@@ -6,40 +6,122 @@
                <div class="page">
                     <div class="oe_structure"/>
                     <div class="row">
-                        <div class="col-6" name="customer_address">
-                        <div t-field="o.customer_id.street"/>
-                    </div>
-                    </div>
-                    <div>
-                    <strong t-if="o.order_code">#Order code:<span t-field="o.order_code"/> </strong>
-                    </div>
-                    <div>
-                    <table class="table table-sm o_main_table">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
-                            <t t-set="colspan" t-value="6"/>
-                            <th class="text-right">customer_id</th>
-                            <th class="text-right">product_code</th>
-                            <th class="text-right">order_date</th>
-                            <th class="text-right">delivery_date</th>
-                            <th class="text-right">order_quantity</th>
-                            <th class="text-right">total_price</th>
+                            <t t-set="colspan" t-value="12"/>
+                            <th class="text-center">Order Date</th>
+                            <th class="text-center">Order #</th>
+                            <th class="text-center">Contact</th>
                             </tr>
                         </thead>
                         <tbody class="order_tbody">
                             <tr>
-                            <td class="text-center"><span t-field="o.customer_id"/></td>
-                            <td class="text-center"><span t-field="o.product_code"/></td>
                             <td class="text-center"><span t-field="o.order_date"/></td>
+                            <td class="text-center"><span t-field="o.order_code"/></td>
+                            <td class="text-center"><span t-field="o.company.name"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="row">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <t t-set="colspan" t-value="12"/>
+                            <th class="text-center">Customer</th>
+                            <th class="text-center">Shipping Address</th>
+                            </tr>
+                        </thead>
+                        <tbody class="order_tbody">
+                            <tr>
+                            <td class="text-left text-justify">
+                                 <ul class="list-unstyled">
+                                    <li t-if="o.customer_id.name"><span t-field="o.customer_id.name"/></li>
+                                    <li t-if="o.customer_id.country"><span t-field="o.customer_id.country"/></li>
+                                </ul>
+                            </td>
+                            <td class="text-left text-justify">
+                                <ul class="list-unstyled">
+                                    <li t-if="o.customer_id.name"><span t-field="o.customer_id.name"/></li>
+                                    <li t-if="o.customer_id.street"><span t-field="o.customer_id.street"/></li>
+                                    <li t-if="o.customer_id.city"><span t-field="o.customer_id.city"/></li>
+                                    <li t-if="o.customer_id.zip"><span t-field="o.customer_id.zip"/></li>
+                                    <li t-if="o.customer_id.country"><span t-field="o.customer_id.country"/></li>
+                                </ul>
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    
+                    <div class="row">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <t t-set="colspan" t-value="12"/>
+                            <th class="text-center">Warranty Period</th>
+                            <th class="text-center">Delivery Date</th>
+                            <th class="text-center">Payment Type</th>
+                            </tr>
+                        </thead>
+                        <tbody class="order_tbody">
+                            <tr>
+                            <td class="text-center"><span t-field="o.warranty_period"/></td>
                             <td class="text-center"><span t-field="o.delivery_date"/></td>
+                            <td class="text-center"><span t-field="o.payment_type"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                
+                <div class="row">
+                    <table class="table table-borderless">
+                        <thead style="border-bottom:1px solid black">
+                            <tr>
+                            <t t-set="colspan" t-value="12"/>
+                            <th class="text-center">Product Name</th>
+                            <th class="text-center">Qty</th>
+                            <th class="text-center">Each(Rs)</th>
+                            <th class="text-center">Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody class="order_tbody">
+                            <tr>
+                            <td class="text-center"><span t-field="o.order_product_id.name"/></td>
                             <td class="text-center"><span t-field="o.order_quantity"/></td>
+                              <td class="text-center"><span t-field="o.price"/></td>
                             <td class="text-center"><span t-field="o.total_price"/></td>
                             </tr>
                         </tbody>
                     </table>
                     </div>
+                    
+                    <div class="row">
+                    <div class="col-12">
+    <p style="text-align:justify;font-size:8">Shipping Time: The pre-ordered products are
+    priority dispatches and are generally shipped within 5 business days
+    upon successful online transaction.</p>
+   <p style="text-align:justify;font-size:8">
+    Delivery address of orders cannot be changed: The delivery
+    pin code can be selected on the variant selection page. Cancellation of order: Prior to the shipping of your order, the user may
+    apply to cancel the order. Generally, refunds across all payment
+    options take between 5 to 7 business days.</p>
+    <p style="text-align:justify;font-size:8">
+    Online payment only: Orders can be done through online payments only. COD
+    option is not available for all pre-paid orders.</p>
+             </div>
+                    </div>
+                    
                 </div>
              </t>   
+      </template>
+      
+      <template id="html_container">
+        <t t-set="body_classname" t-value="'container'"/>
+        <t t-call="web.report_layout">
+            <t t-raw="0"/>
+        </t>
       </template>
          
       <template id="mi_app.report_sale_order">
