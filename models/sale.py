@@ -106,12 +106,12 @@ class MiOrder(models.Model):
     order_quantity=fields.Integer(string="Ordered Quantities")
     delivery_date=fields.Date()
     warranty_period=fields.Selection([('one_year','1 Year'),('two_year','2 Years'),('three_year','3 Years')])
-    total_price=fields.Float()
+    total_price=fields.Monetary(currency_field='currencies')
     payment_type=fields.Selection([('COD','Cash On Delivery'),('Card','Card Payment')])
     
     #Relational Fields
     customer_id=fields.Many2one('mi.sale.customer')
-    order_product_id=fields.Many2one('mi.product')
+    order_product_id=fields.Many2one('mi.product',delegate=True)
     order_sale_id=fields.Many2one('mi.sale')
     company=fields.Many2one('res.company')
     
