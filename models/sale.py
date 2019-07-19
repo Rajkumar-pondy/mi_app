@@ -17,10 +17,12 @@ class MiCustomer(models.Model):
     mobile_no=fields.Char()
     cart_count=fields.Integer(compute="compute_cart_items")
     service_count=fields.Integer(compute="compute_service_count")
+    company=fields.Many2one('res.company')
     
     #Relational Fields
     service_ids=fields.One2many('mi.service','customer_service_id',compute='compute_search_service_charge')
     order_ids=fields.One2many('mi.sale.order','customer_id')
+    order_code_id=fields.Many2one('mi.sale.order')
     product_cart_ids=fields.Many2many('mi.product')
     
     @api.model
@@ -37,7 +39,7 @@ class MiCustomer(models.Model):
             if context.get('customer_special_name',False):
                 res.append((record.id,record.name))
             else:
-                res.append((record.id,'%s %s' %(record.name,record.city)))
+                res.append((record.id,'%s, %s' %(record.name,record.city)))
         return res
         
     def compute_cart_items(self):
@@ -90,6 +92,8 @@ class MiSale(models.Model):
     sale_code=fields.Char(default='New')
     sale_customer_id=fields.Many2one('mi.sale.customer',string="Customer Name",required=True,ondelete='cascade')
     sale_order_ids=fields.One2many('mi.sale.order','order_sale_id')
+    
+    @api.model
     def create(self,vals):
         if vals.get('sale_code','New')=='New':
             vals['sale_code']= self.env['ir.sequence'].next_by_code('mi.sale') or '/'
@@ -102,7 +106,7 @@ class MiOrder(models.Model):
     
     order_code=fields.Char(default='New')
     product_code=fields.Char(related='order_product_id.product_code')
-    order_date=fields.Datetime()
+    order_date=fields.Date()
     order_quantity=fields.Integer(string="Ordered Quantities")
     delivery_date=fields.Date()
     warranty_period=fields.Selection([('one_year','1 Year'),('two_year','2 Years'),('three_year','3 Years')])
@@ -115,14 +119,15 @@ class MiOrder(models.Model):
     order_sale_id=fields.Many2one('mi.sale')
     company=fields.Many2one('res.company')
     
-    @api.onchange('order_quantity')
-    def onchange_order_quantity(self):
-            self.total_price=self.order_product_id.price * self.order_quantity
-    
+    @api.model
     def create(self,vals):
         if vals.get('order_code','New')=='New':
             vals['order_code'] = self.env['ir.sequence'].next_by_code('mi.sale.order') or '/'
             return super(MiOrder,self).create(vals)
+    
+    @api.onchange('order_quantity')
+    def onchange_order_quantity(self):
+            self.total_price=self.order_product_id.price * self.order_quantity
     
     @api.multi
     def name_get(self):
@@ -141,7 +146,7 @@ class MiOrder(models.Model):
     def check_order_quantity(self):
         if self.order_quantity==0:
             raise ValidationError('Order quantity should not be zero')
-        
+                
 class MiDelivery(models.Model):
     _name='mi.sale.delivery'
     _inherit='mail.thread'

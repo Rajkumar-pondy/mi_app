@@ -3,8 +3,6 @@
 	<name>mi_app</name>
 	<comment></comment>
 	<projects>
-		<project>12.0</project>
-		<project>student_information</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -38,8 +38,6 @@
       <field name="model">mi.sale.order</field>
       <field name="arch" type="xml">
         <tree>
-            <field name="order_code"/>
-            <field name="customer_id"/>
             <field name="order_product_id"/>
             <field name="order_date"/>
             <field name="delivery_date"/>
@@ -99,6 +97,9 @@
       <field name="model">mi.sale.customer</field>
       <field name="arch" type="xml">
         <form>
+            <header>
+            <button name="%(action_view_mi_test_report)d" type="action" class="oe_highlight" string="Open"/>
+            </header>
             <sheet>
                  <div class="oe_button_box" name="button_box">
                         <button name="compute_cart_items"
@@ -135,6 +136,8 @@
                         <field name="country" placeholder="country"/>
                         <field name="mobile_no" placeholder="mobile_no"/>
                         </div>
+                        <field name="company"/>
+                        <field name="order_code_id"/>
                     </group>
                     <group>
                         <field name="product_cart_ids" widget="many2many_tags" string="Products" options="{'color_field':'color'}"/>

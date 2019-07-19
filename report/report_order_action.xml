@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <!-- QWeb Reports -->
-        <report
-            id="report_mi_sale_order"
-            model="mi.sale.order"
-            string="Mi Sale Order"
-            report_type="qweb-pdf"
-            name="mi_app.report_sale_order"
-            file="mi_app.report_sale_order"/>
-    </data>
+    <!-- QWeb Reports -->
+    <report id="report_mi_sale_order" model="mi.sale.order"
+        string="Mi Sale Order" report_type="qweb-pdf"
+        name="mi_app.report_sale_order" file="mi_app.report_sale_order"
+        paperformat="base.paperformat_us" />
+    
+     <report id="report_mi_customer_order_lines" model="mi.sale.customer"
+        string="Mi Sale Order" report_type="qweb-pdf"
+        name="mi_app.report_customer_order" file="mi_app.report_customer_order"
+        paperformat="base.paperformat_us" />
 </odoo>

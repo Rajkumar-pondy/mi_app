@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="sale_order_report_documents">
+    <template id="customer_order_report_documents">
         <t t-call="web.external_layout_standard">
             <div class="page">
                 <div class="oe_structure" />
@@ -17,10 +17,10 @@
                         <tbody class="order_tbody">
                             <tr>
                                 <td class="text-center">
-                                    <span t-field="o.order_date" />
+                                    <span t-field="o.order_code_id.order_date" />
                                 </td>
                                 <td class="text-center">
-                                    <span t-field="o.order_code" />
+                                    <span t-field="o.order_code_id.order_code" />
                                 </td>
                                 <td class="text-center">
                                     <span t-field="o.company.name" />
@@ -43,40 +43,40 @@
                             <tr>
                                 <td class="text-left text-justify">
                                     <ul class="list-unstyled">
-                                        <li t-if="o.customer_id.name">
+                                        <li t-if="o.name">
                                             <span
-                                                t-field="o.customer_id.name" />
+                                                t-field="o.name" />
                                         </li>
                                         <li
-                                            t-if="o.customer_id.country">
+                                            t-if="o.country">
                                             <span
-                                                t-field="o.customer_id.country" />
+                                                t-field="o.country" />
                                         </li>
                                     </ul>
                                 </td>
                                 <td class="text-left text-justify">
                                     <ul class="list-unstyled">
-                                        <li t-if="o.customer_id.name">
+                                        <li t-if="o.name">
                                             <span
-                                                t-field="o.customer_id.name" />
+                                                t-field="o.name" />
                                         </li>
                                         <li
-                                            t-if="o.customer_id.street">
+                                            t-if="o.street">
                                             <span
-                                                t-field="o.customer_id.street" />
+                                                t-field="o.street" />
                                         </li>
-                                        <li t-if="o.customer_id.city">
+                                        <li t-if="o.city">
                                             <span
-                                                t-field="o.customer_id.city" />
+                                                t-field="o.city" />
                                         </li>
-                                        <li t-if="o.customer_id.zip">
+                                        <li t-if="o.zip">
                                             <span
-                                                t-field="o.customer_id.zip" />
+                                                t-field="o.zip" />
                                         </li>
                                         <li
-                                            t-if="o.customer_id.country">
+                                            t-if="o.country">
                                             <span
-                                                t-field="o.customer_id.country" />
+                                                t-field="o.country" />
                                         </li>
                                     </ul>
                                 </td>
@@ -100,13 +100,13 @@
                             <tr>
                                 <td class="text-center">
                                     <span
-                                        t-field="o.warranty_period" />
+                                        t-field="o.order_code_id.warranty_period" />
                                 </td>
                                 <td class="text-center">
-                                    <span t-field="o.delivery_date" />
+                                    <span t-field="o.order_code_id.delivery_date" />
                                 </td>
                                 <td class="text-center">
-                                    <span t-field="o.payment_type" />
+                                    <span t-field="o.order_code_id.payment_type" />
                                 </td>
                             </tr>
                         </tbody>
@@ -119,6 +119,7 @@
                         <thead>
                             <tr>
                                 <t t-set="colspan" t-value="12" />
+                                <th class="text-center">Line#</th>
                                 <th class="text-center">Product Name</th>
                                 <th class="text-center">Qty</th>
                                 <th class="text-center">Each(Rs)</th>
@@ -126,22 +127,28 @@
                             </tr>
                         </thead>
                         <tbody class="order_tbody">
+                            <t t-set="i" t-value="1" /> 
+                            <div t-foreach="o.order_ids" t-as="line">
                             <tr>
                                 <td class="text-center">
-                                    <span
-                                        t-field="o.order_product_id.name" />
+                                      <span t-esc="i"/> 
+                                      <t t-set="i" t-value="i+1"/> 
                                 </td>
                                 <td class="text-center">
-                                    <span
-                                        t-field="o.order_quantity" />
+                                 <span t-field="line.name"/>
                                 </td>
-                                <td class="text-center">
-                                    <span t-field="o.price" />
-                                </td>
-                                <td class="text-center">
-                                    <span t-field="o.total_price" />
-                                </td>
+                                    <td class="text-center">
+                                    <span t-field="line.order_quantity"/>
+                                    </td>
+                                     <td class="text-center">
+                                      <span t-field="line.price"/>
+                                     </td>
+                                    <td class="text-center">
+                                         <span t-field="line.total_price"/>
+                                    </td>   
+                           
                             </tr>
+                            </div>
                         </tbody>
                     </table>
                 </div>
@@ -179,10 +186,10 @@
         </t>
     </template>
 
-    <template id="mi_app.report_sale_order">
+    <template id="mi_app.report_customer_order">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
-                <t t-call="mi_app.sale_order_report_documents" />
+                <t t-call="mi_app.customer_order_report_documents" />
             </t>
         </t>
     </template>

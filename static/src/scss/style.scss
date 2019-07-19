@@ -1,0 +1,27 @@
+.header {
+    font-size:18px;
+    font-family: "Times New Roman", Times, serif;
+        }
+        
+.page {
+    font-family: "Times New Roman", Times, serif;
+       }
+       
+.footer {
+  border-top: 1px solid black;
+    }
+
+.col-12 p{
+    text-align:justify;
+    font-size:4;
+    }
+
+#order_lines th, #order th, #shipping th, #delivery th {
+  text-align: center;
+  background-color:#ff6600;
+  color: white;
+}
+
+#order_lines td {
+    line-height:70%;
+}
