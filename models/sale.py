@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api, exceptions
+from odoo import models, fields, api, exceptions, _
 from odoo.exceptions import ValidationError
+
+PROCUREMENT_PRIORITIES = [('0', 'Not urgent'), ('1', 'Normal'), ('2', 'Urgent'), ('3', 'Very Urgent')]
 
 class MiCustomer(models.Model):
     _name='mi.sale.customer'
@@ -20,7 +22,7 @@ class MiCustomer(models.Model):
     company=fields.Many2one('res.company')
     
     #Relational Fields
-    service_ids=fields.One2many('mi.service','customer_service_id',compute='compute_search_service_charge')
+    service_ids=fields.One2many('mi.service','customer_service_id')
     order_ids=fields.One2many('mi.sale.order','customer_id')
     order_code_id=fields.Many2one('mi.sale.order')
     product_cart_ids=fields.Many2many('mi.product')
@@ -79,9 +81,9 @@ class MiCustomer(models.Model):
             return action
             
         
-    def compute_search_service_charge(self):
-            self.service_ids=self.env['mi.service'].search([('service_charge','>',50)])
-        
+#     def compute_search_service_charge(self):
+#             self.service_ids=self.env['mi.service'].search([('service_charge','>',50)])
+#         
 
 class MiSale(models.Model):
     _name = 'mi.sale'
@@ -110,12 +112,14 @@ class MiOrder(models.Model):
     order_quantity=fields.Integer(string="Ordered Quantities")
     delivery_date=fields.Date()
     warranty_period=fields.Selection([('one_year','1 Year'),('two_year','2 Years'),('three_year','3 Years')])
-    total_price=fields.Monetary(currency_field='currencies')
+    discount=fields.Float('discount')
+    total_price=fields.Float()
     payment_type=fields.Selection([('COD','Cash On Delivery'),('Card','Card Payment')])
+    priority = fields.Selection(PROCUREMENT_PRIORITIES, 'Priority', default='1')
     
     #Relational Fields
     customer_id=fields.Many2one('mi.sale.customer')
-    order_product_id=fields.Many2one('mi.product',delegate=True)
+    order_product_id=fields.Many2one('mi.product',delegate=True,required=True)
     order_sale_id=fields.Many2one('mi.sale')
     company=fields.Many2one('res.company')
     
@@ -125,9 +129,9 @@ class MiOrder(models.Model):
             vals['order_code'] = self.env['ir.sequence'].next_by_code('mi.sale.order') or '/'
             return super(MiOrder,self).create(vals)
     
-    @api.onchange('order_quantity')
+    @api.onchange('order_quantity','discount')
     def onchange_order_quantity(self):
-            self.total_price=self.order_product_id.price * self.order_quantity
+            self.total_price= (self.order_product_id.price * self.order_quantity)-(self.total_price* self.discount/100)
     
     @api.multi
     def name_get(self):
@@ -159,7 +163,8 @@ class MiDelivery(models.Model):
     state=fields.Selection([('shipped','Item Shipped'),
                              ('packed','Item Packed'),
                              ('out_delivery','Out for Delivery'),
-                             ('delivered','Item Delivered')
+                             ('delivered','Item Delivered'),
+                             ('cancel','Cancelled')
                              ],default='shipped',track_visibility='onchange')
     payment_type=fields.Char()
     total_amount=fields.Float('Total Amount')
@@ -186,6 +191,12 @@ class MiDelivery(models.Model):
     def delivery_progress(self):
         self.write({
                     'state':'delivered',
+                    })
+    
+    @api.one
+    def action_cancel(self):
+        self.write({
+                    'state':'cancel',
                     })
     
     @api.onchange('delivery_order_id')

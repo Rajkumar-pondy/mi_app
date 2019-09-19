@@ -24,6 +24,7 @@
     # always loaded
     'data': [
         'data/report.paperformat.xml',
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/product_view.xml',
         'wizard/test_report.xml',

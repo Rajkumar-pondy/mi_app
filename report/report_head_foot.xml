@@ -1,90 +1,82 @@
 <odoo>
-    <template id="report_assets_common"
-        inherit_id="web.report_assets_common">
-        <xpath expr="//link[last()]" position="after">
-            <link href="/mi_app/static/src/scss/style.scss"
-                rel="stylesheet" type="text/scss" />
-        </xpath>
-    </template>
-    
-    <template id="web.external_layout_standard">
-        <div class="header">
-            <div class="row" style="border-bottom: 1px solid black;">
-                <div class="col-3">
-                    <div t-field="o.company.partner_id"
-                        t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" />
-                </div>
-                <div class="col-3">
-                    <ul class="list-unstyled">
-                        <li t-if="o.company.phone">
-                            Tel:
-                            <span t-field="o.company.phone"
-                                t-options="{'widget':'phone'}" />
-                        </li>
-                        <li t-if="o.company.website">
-                            <span t-field="o.company.website" />
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6">
-                    <div>
-                        <img
-                            src="/mi_app/static/src/img/redmi_logo.png"
-                            width="100%" height="75px"
-                            alt="company logo" />
-                    </div>
-                    <div class="text-right">
-                        <ul class="list-unstyled">
-                            <li>
-                                <span
-                                    style="text-transform:capitalize">the redmi phones</span>
-                            </li>
-                            <li>
-                                <span
-                                    style="text-transform:capitalize">the redmi bags</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="article o_report_layout_standard"
-            t-att-data-oe-model="o and o._name"
-            t-att-data-oe-id="o and o.id"
-            t-att-data-oe-lang="o and o.env.context.get('lang')">
-            <t t-call="web.address_layout" />
-            <t t-raw="0" />
-        </div>
-        
-        <div class="footer">
-                <div class="text-center">
-                    <ul class="list-inline">
-                        <li t-if="o.company.phone"
-                            class="list-inline-item">
-                            Phone:
-                            <span t-field="o.company.phone" />
-                        </li>
-                        <li t-if="o.company.email"
-                            class="list-inline-item">
-                            Email:
-                            <span t-field="o.company.email" />
-                        </li>
-                        <li t-if="o.company.website"
-                            class="list-inline-item">
-                            Web:
-                            <span t-field="o.company.website" />
-                        </li>
-                    </ul>
-                </div>
-              <div class="text-center page_number">
-                        <div class="text-muted">
-                            Page:
-                            <span class="page"/>
-                            /
-                            <span class="topage"/>
-                        </div>
-                    </div>
-            </div>
-    </template>
+ <template id="report_assets_common"
+  inherit_id="web.report_assets_common">
+  <xpath expr="//link[last()]" position="after">
+   <link href="/mi_app/static/src/scss/style.scss" rel="stylesheet"
+    type="text/scss" />
+  </xpath>
+ </template>
+
+ <template id="web.external_layout_standard">
+  <div class="header">
+   <div class="row" style="border-bottom: 1px solid black;">
+    <div class="col-3">
+     <div t-field="o.company.partner_id"
+      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" />
+    </div>
+    <div class="col-3">
+     <ul class="list-unstyled">
+      <li t-if="o.company.phone">
+       Tel:
+       <span t-field="o.company.phone"
+        t-options="{'widget':'phone'}" />
+      </li>
+      <li t-if="o.company.website">
+       <span t-field="o.company.website" />
+      </li>
+     </ul>
+    </div>
+    <div class="col-6">
+     <div>
+      <img src="/mi_app/static/src/img/redmi_logo.png" width="100%"
+       height="75px" alt="company logo" />
+     </div>
+     <div class="text-right">
+      <ul class="list-unstyled">
+       <li>
+        <span style="text-transform:capitalize">the redmi phones</span>
+       </li>
+       <li>
+        <span style="text-transform:capitalize">the redmi bags</span>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="article o_report_layout_standard"
+   t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+   t-att-data-oe-lang="o and o.env.context.get('lang')">
+   <t t-call="web.address_layout" />
+   <t t-raw="0" />
+  </div>
+
+  <div class="footer">
+   <div class="text-center">
+    <ul class="list-inline">
+     <li t-if="o.company.phone" class="list-inline-item">
+      Phone:
+      <span t-field="o.company.phone" />
+     </li>
+     <li t-if="o.company.email" class="list-inline-item">
+      Email:
+      <span t-field="o.company.email" />
+     </li>
+     <li t-if="o.company.website" class="list-inline-item">
+      Web:
+      <span t-field="o.company.website" />
+     </li>
+    </ul>
+   </div>
+   <div class="text-center page_number">
+    <div class="text-muted">
+     Page:
+     <span class="page" />
+     /
+     <span class="topage" />
+    </div>
+   </div>
+  </div>
+ </template>
 </odoo>

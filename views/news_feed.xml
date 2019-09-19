@@ -47,7 +47,7 @@
     <record model="ir.actions.act_window" id="news_action_window">
       <field name="name">Mi News</field>
       <field name="res_model">mi.newsfeed</field>
-      <field name="view_mode">tree,form,calendar</field>
+      <field name="view_mode">kanban,form,calendar</field>
     </record>
 
     <menuitem name="News" id="news_menu" parent="mi_app" action="news_action_window"/>

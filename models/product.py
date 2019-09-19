@@ -6,7 +6,8 @@ from odoo.exceptions import ValidationError
 class MiProduct(models.Model):
     _name = 'mi.product'
     _description="Mi Products"
-    _sql_constraints=[('name_unique','unique(name)','Name must be unique'),('check_price','check(price>0)','Price should not be zero')]
+    _sql_constraints=[('name_unique','unique(name)','Name must be unique'),
+                      ('check_price','check(price>0)','Price should not be zero')]
     _rec_name='name'
 
     name = fields.Char('Product Name')
@@ -14,9 +15,10 @@ class MiProduct(models.Model):
     product_code=fields.Char(default='New',copy=False)
     manufacture_date = fields.Date('Manufacture Date')
     currencies=fields.Many2one('res.currency','Currencies',required=True)
-    price = fields.Monetary('Price',currency_field='currencies',digits=(7,1),group_operator='avg')
+    price = fields.Monetary('Price',currency_field='currencies',digits=(7,1),group_operator=False)
     description=fields.Html('Description')
-    product_availability = fields.Selection([('in_stock', 'In Stock'), ('out_stock', 'Out of Stock'), ('soon_available', 'Available Soon')],string="Product Availability")
+    product_availability = fields.Selection([('in_stock', 'In Stock'),('out_stock', 'Out of Stock'), 
+                                             ('soon_available', 'Available Soon')],string="Product Availability")
     is_product_available = fields.Boolean(default=False)
     color=fields.Integer()
     

@@ -23,7 +23,7 @@
                                     <span t-field="o.order_code_id.order_code" />
                                 </td>
                                 <td class="text-center">
-                                    <span t-field="o.company.name" />
+                                    <span t-field="o.company.partner_id" />
                                 </td>
                             </tr>
                         </tbody>
@@ -146,7 +146,6 @@
                                     <td class="text-center">
                                          <span t-field="line.total_price"/>
                                     </td>   
-                           
                             </tr>
                             </div>
                         </tbody>

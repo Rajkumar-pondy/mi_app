@@ -1,31 +1,35 @@
 <odoo>
 
-<record id="view_mi_test_report_wizard" model="ir.ui.view">
-    <field name="name">Test Report</field>
-    <field name="model">mi.test.report</field>
-    <field name="arch" type="xml">
-        <form string="Choose The Priority">
-            <group>
-                <group>
-                    <field name="priority" widget="priority"/>
-                </group>
-            </group>
-            <footer>
-                <button name="get_priority" type="object" string="confirm"/>
-                or
-                <button string="Cancel" class="oe_link" special="cancel"/>
-            </footer>
-        </form>
-    </field>
-</record>
+ <record id="view_mi_test_report_wizard" model="ir.ui.view">
+  <field name="name">Test Report</field>
+  <field name="model">mi.test.report</field>
+  <field name="arch" type="xml">
+   <form string="Choose The Priority">
+    <group>
+     <group>
+      <field name="discount_id" />
+      <field name="priority" widget="priority" />
+      <field name="discount" />
+     </group>
+    </group>
+    <footer>
+     <button name="change_discount" type="object"
+      string="confirm" />
+     or
+     <button string="Cancel" class="oe_link" special="cancel" />
+    </footer>
+   </form>
+  </field>
+ </record>
 
-<record id="action_view_mi_test_report" model="ir.actions.act_window">
-    <field name="name">Customer order priority</field>
-    <field name="type">ir.actions.act_window</field>
-    <field name="res_model">mi.test.report</field>
-    <field name="view_type">form</field>
-    <field name="view_mode">form</field>
-    <field name="target">new</field>
-</record>
+ <record id="action_view_mi_test_report"
+  model="ir.actions.act_window">
+  <field name="name">Customer order priority</field>
+  <field name="type">ir.actions.act_window</field>
+  <field name="res_model">mi.test.report</field>
+  <field name="view_type">form</field>
+  <field name="view_mode">form</field>
+  <field name="target">new</field>
+ </record>
 
 </odoo>

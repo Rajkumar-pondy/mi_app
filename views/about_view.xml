@@ -1,34 +1,36 @@
 <odoo>
 
-    <record model="ir.ui.view" id="aboutus_list">
-      <field name="name">About Us List</field>
-      <field name="model">mi.aboutus</field>
-      <field name="arch" type="xml">
-        <tree>
-            <field name="company_id" readonly="1"/>
-        </tree>
-      </field>
-    </record>
+ <record model="ir.ui.view" id="aboutus_list">
+  <field name="name">About Us List</field>
+  <field name="model">mi.aboutus</field>
+  <field name="arch" type="xml">
+   <tree>
+    <field name="company_id" readonly="1" />
+   </tree>
+  </field>
+ </record>
 
-    <record id="aboutus_form" model="ir.ui.view">
-      <field name="name">About Us List form</field>
-      <field name="model">mi.aboutus</field>
-      <field name="arch" type="xml">
-        <form>
-            <sheet>
-                <group>
-                    <field name="company_id"/>
-                </group>
-            </sheet>
-        </form>
-      </field>
-    </record>
+ <record id="aboutus_form" model="ir.ui.view">
+  <field name="name">About Us List form</field>
+  <field name="model">mi.aboutus</field>
+  <field name="arch" type="xml">
+   <form>
+    <sheet>
+     <group>
+      <field name="company_id" />
+      <field name="about" />
+     </group>
+    </sheet>
+   </form>
+  </field>
+ </record>
 
-    <record model="ir.actions.act_window" id="about_action_window">
-      <field name="name">About Us</field>
-      <field name="res_model">mi.aboutus</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+ <record model="ir.actions.act_window" id="about_action_window">
+  <field name="name">About Us</field>
+  <field name="res_model">mi.aboutus</field>
+  <field name="view_mode">tree,form</field>
+ </record>
 
-    <menuitem name="About Us" id="about_menu" parent="mi_app" action="about_action_window"/>
+ <menuitem name="About Us" id="about_menu" parent="mi_app"
+  action="about_action_window" />
 </odoo>

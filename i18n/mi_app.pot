@@ -1,0 +1,1028 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mi_app
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-26 05:24+0000\n"
+"PO-Revision-Date: 2019-07-26 05:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mi_app
+#: selection:mi.sale.order,warranty_period:0
+msgid "1 Year"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.sale.order,warranty_period:0
+msgid "2 Years"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.sale.order,warranty_period:0
+msgid "3 Years"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__about
+msgid "About"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.about_action_window
+#: model:ir.model,name:mi_app.model_mi_aboutus
+#: model:ir.ui.menu,name:mi_app.about_menu
+msgid "About Us"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "Address"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.product_category_form
+msgid "Are you sure to go back to products?"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.product,product_availability:0
+msgid "Available Soon"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.product_category_form
+msgid "Back to Products"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.view_mi_test_report_wizard
+msgid "Cancel"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.sale.order,payment_type:0
+msgid "Card Payment"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "Cart"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__cart_count
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__cart_count
+msgid "Cart Count"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.sale.order,payment_type:0
+msgid "Cash On Delivery"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.ui.menu,name:mi_app.category_submenu
+msgid "Category"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category__category_code
+msgid "Category Id"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category__category_name
+msgid "Category Name"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.view_mi_test_report_wizard
+msgid "Choose The Priority"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__city
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__city
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "City"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__code_customer
+msgid "Code Customer"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__color
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__color
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__color
+msgid "Color"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__company
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__company
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__company
+msgid "Company"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_aboutus__company_id
+msgid "Company Details"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Contact"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__country
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__country
+msgid "Country"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.actions.act_window,help:mi_app.category_action_window
+msgid "Create the product category"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.actions.act_window,help:mi_app.product_action_window
+msgid "Create the products"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_aboutus__create_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__create_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__create_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category__create_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__create_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__create_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__create_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__create_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__create_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_aboutus__create_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__create_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__create_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category__create_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__create_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__create_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__create_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__create_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__create_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__currencies
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__currencies
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__currencies
+msgid "Currencies"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__customer_id
+#: model:ir.ui.menu,name:mi_app.customer_submenu
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Customer"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__customer_code
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__customer_code
+msgid "Customer Code"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__sale_customer_id
+msgid "Customer Name"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.action_view_mi_test_report
+msgid "Customer order priority"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.ui.menu,name:mi_app.delivery_submenu
+msgid "Delivery"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__delivery_customer_id
+msgid "Delivery Customer"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__delivery_date
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Delivery Date"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__delivery_order_id
+msgid "Delivery Order"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.delivery_list
+msgid "Delivery Status"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Delivery address of orders cannot be changed: The delivery\n"
+"                            pin code can be selected on the variant selection page. Cancellation\n"
+"                            of order: Prior to the shipping of your\n"
+"                            order, the user may\n"
+"                            apply to cancel the order. Generally, refunds across all payment\n"
+"                            options take between 5 to 7 business days."
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__description
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__description
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__description
+msgid "Description"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report__discount
+msgid "Discount"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_aboutus__display_name
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__display_name
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__display_name
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category__display_name
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__display_name
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__display_name
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__display_name
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__display_name
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__display_name
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Each(Rs)"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__delivery_datetime
+msgid "Expected Delivery"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.product_form
+msgid "General Information"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_aboutus__id
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__id
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__id
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category__id
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__id
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__id
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__id
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__id
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__id
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report__id
+msgid "ID"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,help:mi_app.field_mi_sale_delivery__message_unread
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,help:mi_app.field_mi_sale_delivery__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,help:mi_app.field_mi_sale_delivery__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__image
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__image
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__image
+msgid "Image"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.product,product_availability:0
+msgid "In Stock"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__is_product_available
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__is_product_available
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__is_product_available
+msgid "Is Product Available"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__is_warranty_available
+msgid "Is Warranty Available"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.delivery_form
+#: selection:mi.sale.delivery,state:0
+msgid "Item Delivered"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.delivery_form
+#: selection:mi.sale.delivery,state:0
+msgid "Item Packed"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.delivery_form
+#: selection:mi.sale.delivery,state:0
+msgid "Item Shipped"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_aboutus____last_update
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed____last_update
+#: model:ir.model.fields,field_description:mi_app.field_mi_product____last_update
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category____last_update
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale____last_update
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer____last_update
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery____last_update
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order____last_update
+#: model:ir.model.fields,field_description:mi_app.field_mi_service____last_update
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_aboutus__write_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__write_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__write_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category__write_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__write_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__write_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__write_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__write_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__write_uid
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_aboutus__write_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__write_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__write_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category__write_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__write_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__write_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__write_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__write_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__write_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__launching_date
+msgid "Launching Date"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+msgid "Line#"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__manufacture_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__manufacture_date
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__manufacture_date
+msgid "Manufacture Date"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.mi_product_kanban
+msgid "Mi"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.ui.menu,name:mi_app.mi_app
+msgid "Mi App"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.product.category,category_name:0
+msgid "Mi Bags"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.product.category,category_name:0
+msgid "Mi Lights"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.news_action_window
+msgid "Mi News"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model,name:mi_app.model_mi_newsfeed
+msgid "Mi News Feed"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.product_action_window
+msgid "Mi Product"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model,name:mi_app.model_mi_product_category
+msgid "Mi Product Category"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model,name:mi_app.model_mi_product
+msgid "Mi Products"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.sale_action_window
+msgid "Mi Sale"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model,name:mi_app.model_mi_sale_customer
+msgid "Mi Sale Customer"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.report,name:mi_app.report_mi_customer_order_lines
+#: model:ir.actions.report,name:mi_app.report_mi_sale_order
+#: model:ir.model,name:mi_app.model_mi_sale_order
+msgid "Mi Sale Order"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model,name:mi_app.model_mi_sale
+msgid "Mi Sales"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.service_action_window
+#: model:ir.model,name:mi_app.model_mi_service
+msgid "Mi Service"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.product.category,category_name:0
+msgid "Mi Tv"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.customer_action_window
+msgid "Mi sale customer"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.delivery_action_window
+msgid "Mi sale delivery"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.order_action_window
+msgid "Mi sale order"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__mobile_no
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__mobile_no
+msgid "Mobile No"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.product.category,category_name:0
+msgid "Mobile Phones"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__name
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__name
+msgid "Name"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__customer_service_id
+msgid "Name Customer"
+msgstr ""
+
+#. module: mi_app
+#: sql_constraint:mi.product:0
+msgid "Name must be unique"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.ui.menu,name:mi_app.news_menu
+msgid "News"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.sale.order,priority:0
+#: selection:mi.test.report,priority:0
+msgid "Normal"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.sale.order,priority:0
+#: selection:mi.test.report,priority:0
+msgid "Not urgent"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_has_error_counter
+msgid "Number of error"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,help:mi_app.field_mi_sale_delivery__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,help:mi_app.field_mi_sale_delivery__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,help:mi_app.field_mi_sale_delivery__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Online payment only: Orders can be done through online payments only.\n"
+"                            COD\n"
+"                            option is not available for all pre-paid orders."
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "Open"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__order_ids
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__order_ids
+#: model:ir.ui.menu,name:mi_app.order_submenu
+msgid "Order"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Order #"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__order_code_id
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__order_code_id
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__order_code
+msgid "Order Code"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__order_date
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Order Date"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__order_product_id
+msgid "Order Product"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__order_sale_id
+msgid "Order Sale"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_form
+msgid "Order_Lines"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__order_quantity
+msgid "Ordered Quantities"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "Orders"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.sale.delivery,state:0
+msgid "Out for Delivery"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.delivery_form
+msgid "Out for delivery"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.product,product_availability:0
+msgid "Out of Stock"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__payment_type
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__payment_type
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Payment Type"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__price
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__price
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__price
+msgid "Price"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.view_pivot_products
+#: model_terms:ir.ui.view,arch_db:mi_app.view_product_category_price_graph
+msgid "Price Analysis"
+msgstr ""
+
+#. module: mi_app
+#: sql_constraint:mi.product:0
+msgid "Price should not be zero"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__priority
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report__priority
+msgid "Priority"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.ui.menu,name:mi_app.product_menu
+msgid "Product"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__product_availability
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__product_availability
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__product_availability
+#: model_terms:ir.ui.view,arch_db:mi_app.view_product_search
+msgid "Product Availability"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__product_cart_ids
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__product_cart_ids
+msgid "Product Cart"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__categ_id
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__category_id
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__category_id
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__category_id
+msgid "Product Categories"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.actions.act_window,name:mi_app.category_action_window
+msgid "Product Category"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__product_code
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__product_code
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__product_code
+msgid "Product Code"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.product_form
+msgid "Product Description"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__product_img
+msgid "Product Img"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_newsfeed__product_launch
+msgid "Product Launch"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product__name
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__name
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__name
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.product_form
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Product Name"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__product_service_id
+msgid "Product Service"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_product_category__product_ids
+#: model:ir.model.fields,field_description:mi_app.field_mi_test_report__discount_id
+#: model:ir.ui.menu,name:mi_app.product_submenu
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+#: model_terms:ir.ui.view,arch_db:mi_app.product_category_form
+msgid "Products"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.view_news_calendar
+msgid "Products Launching"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.view_product_search
+msgid "Products related Search"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Qty"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.ui.menu,name:mi_app.sale_menu
+msgid "Sale"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__sale_code
+msgid "Sale Code"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__sale_order_ids
+msgid "Sale Order"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.ui.menu,name:mi_app.sale_submenu
+msgid "Sales"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__service_ids
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__service_ids
+#: model:ir.ui.menu,name:mi_app.service_menu
+msgid "Service"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__service_charge
+msgid "Service Charge"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_service__service_code
+msgid "Service Code"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__service_count
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__service_count
+msgid "Service Count"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "Services"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Shipping Address"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Shipping Time: The pre-ordered products are\n"
+"                            priority dispatches and are generally\n"
+"                            shipped within 5 business days\n"
+"                            upon successful online transaction."
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__state
+msgid "State"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__street
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__street
+msgid "Street"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__street2
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__street2
+msgid "Street2"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model,name:mi_app.model_mi_sale_delivery
+msgid "The Mi Delivery"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model,name:mi_app.model_mi_test_report
+msgid "The wizard"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__total_amount
+#: model_terms:ir.ui.view,arch_db:mi_app.order_list
+msgid "Total Amount"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__total_price
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Total Price"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.sale.order,priority:0
+#: selection:mi.test.report,priority:0
+msgid "Urgent"
+msgstr ""
+
+#. module: mi_app
+#: selection:mi.sale.order,priority:0
+#: selection:mi.test.report,priority:0
+msgid "Very Urgent"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__warranty_period
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_order_report_documents
+#: model_terms:ir.ui.view,arch_db:mi_app.sale_order_report_documents
+msgid "Warranty Period"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_delivery__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,help:mi_app.field_mi_sale_delivery__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "ZIP"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale__zip
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_customer__zip
+msgid "Zip"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.view_mi_test_report_wizard
+msgid "confirm"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "country"
+msgstr ""
+
+#. module: mi_app
+#: model:ir.model.fields,field_description:mi_app.field_mi_sale_order__discount
+msgid "discount"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "mobile_no"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.view_mi_test_report_wizard
+msgid "or"
+msgstr ""
+
+#. module: mi_app
+#: model_terms:ir.ui.view,arch_db:mi_app.customer_form
+msgid "street"
+msgstr ""
+

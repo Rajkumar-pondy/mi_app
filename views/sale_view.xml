@@ -43,8 +43,10 @@
             <field name="delivery_date"/>
             <field name="order_quantity"/> 
             <field name="payment_type"/>
+            <field name="discount"/>
             <field name="price"/>
             <field name="total_price" sum="Total Amount"/>
+            <field name="priority" widget="priority"/>
         </tree>
       </field>
     </record>
@@ -69,11 +71,12 @@
                     </group>
                     <group>
                         <field name="delivery_date"/>
-                        <field name="currencies"/>
+                        <field name="discount"/>
                         <field name="price"/>
                         <field name="order_quantity"/>
                         <field name="total_price"/>
                         <field name="payment_type"/>
+                        <field name="priority" widget="priority"/>
                     </group>
                 </group>
             </sheet>
@@ -136,7 +139,6 @@
                         <field name="country" placeholder="country"/>
                         <field name="mobile_no" placeholder="mobile_no"/>
                         </div>
-                        <field name="company"/>
                         <field name="order_code_id"/>
                     </group>
                     <group>
@@ -181,6 +183,7 @@
                 <button name="pack_progress" string="Item Packed" type="object" attrs="{'invisible':[('state','=','packed')]}"/>
                 <button name="out_progress" string="Out for delivery" type="object" attrs="{'invisible':[('state','=','out_delivery')]}"/>
                 <button name="delivery_progress" string="Item Delivered" type="object" attrs="{'invisible':[('state','=','delivered')]}"/>
+                <button name="action_cancel" string="Cancel" type="object"/>
                 <field name="state" widget="statusbar"/>
             </header>
             <sheet>

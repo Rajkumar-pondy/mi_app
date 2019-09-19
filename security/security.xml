@@ -1,0 +1,44 @@
+<odoo>
+<data>
+
+<record id='group_manager' model='res.groups'>
+    <field name="name">Mi/ Manager</field>
+</record>
+
+<record id='customer_view' model='res.groups'>
+    <field name="name">Customer</field>
+</record>
+
+
+<record id="newsfeed_security" model="ir.rule">
+    <field name="name">Customer Can't edit Newsfeed</field>
+    <field name="model_id" ref="model_mi_newsfeed"/>
+    <field name="groups" eval="[(4, ref('mi_app.customer_view'))]"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="0"/>
+    <field name="perm_create" eval="0"/>
+    <field name="perm_unlink" eval="0" />
+</record>
+
+<record id="aboutus_security" model="ir.rule">
+    <field name="name">Customer Can only view about us</field>
+    <field name="model_id" ref="model_mi_newsfeed"/>
+    <field name="groups" eval="[(4, ref('mi_app.customer_view'))]"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="0"/>
+    <field name="perm_create" eval="0"/>
+    <field name="perm_unlink" eval="0" />
+</record>
+
+ <!-- <record id="manager_aboutus" model="ir.rule">
+            <field name="name">Only manager can modify AboutUs</field>
+            <field name="model_id" ref="model_mi_aboutus"/>
+            <field name="groups" eval="[(4, ref('mi_app.group_manager'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+</record> -->
+
+</data>
+</odoo>

@@ -19,6 +19,7 @@ class MiService(models.Model):
         if self.customer_service_id:
             self.code_customer=self.customer_service_id.customer_code
             
+    @api.model
     def create(self,vals):
         if vals.get('service_code','New')=='New':
             vals['service_code']=self.env['ir.sequence'].next_by_code('mi.service') or '/'

@@ -1,8 +1,11 @@
 eclipse.preferences.version=1
+encoding//controllers/controllers.py=utf-8
+encoding//models/__init__.py=utf-8
 encoding//models/about_us.py=utf-8
 encoding//models/class_service.py=utf-8
 encoding//models/news_feed.py=utf-8
 encoding//models/product.py=utf-8
 encoding//models/sale.py=utf-8
+encoding//models/service.py=utf-8
 encoding/__init__.py=utf-8
 encoding/__manifest__.py=utf-8
