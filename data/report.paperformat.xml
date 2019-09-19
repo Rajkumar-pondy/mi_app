@@ -1,8 +1,8 @@
 <odoo noupdate="1">
 
 <record id="sale_order_paperformat" model="report.paperformat">
-    <field name="name">Mi Sale Order</field>
-    <field name="default" eval="True"/>
+   <field name="name">Mi Sale Order</field>
+   <field name="default" eval="True"/>
    <field name="format">custom</field>
    <field name="page_height">1200</field>
    <field name="page_width">800</field>
